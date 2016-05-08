@@ -1,0 +1,164 @@
+<div class="full-screen">
+	<!--Start Section-->
+	<div ng-show="!startVisible" class="start-screen">
+		<div class="game-title">
+			<div class="inner">
+				<div class="word">
+					<div class="angle angle10">W</div>
+					ord
+				</div>
+				<div class="word">
+					<span class="angle angle10-minus">S</span>cramble
+				</div>
+			</div>
+
+		</div>
+		<div class="game-middle">
+			<button class="button button-lg"
+			        ng-click="startShowHide(); instructionShowHide()"> START
+			</button>
+		</div>
+		<div class="game-footer">
+			<div class="inner">
+				<table width="100%">
+					<tr>
+						<td>
+							<div class="word">
+								<div class="angle angle10 card-border">T</div>
+								<div class="angle angle10">I</div>
+								<div class="angle angle10-minus">M</div>
+								<div class="angle angle10-minus">E</div>
+							</div>
+						</td>
+						<td>
+							<div class="word">
+								<div class="angle angle10">F</div>
+								<div class="angle angle10-minus">O</div>
+								<div class="angle angle10">R</div>
+							</div>
+						</td>
+						<td>
+							<div class="word">
+								<div class="angle angle10">L</div>
+								<div class="angle angle10">E</div>
+								<div class="angle angle10">A</div>
+								<div class="angle angle10-minus">R</div>
+								<div class="angle angle10-minus">N</div>
+								<div class="angle">I</div>
+								<div class="angle angle10">N</div>
+								<div class="angle angle10-minus">G</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!--Instruction Section-->
+	<div ng-show="instructionVisible" class="instruction-screen">
+		<h2 class="instruction">Instructions</h2>
+		<div class="instruction-text">
+			<p>Reagrange the letters to form a valid word.</p>
+			<br>
+			<p>You may click the hint button to get the meaning of the word </p>
+		</div>
+		<div class="instruction-button">
+			<button class="button button-lg"
+			        ng-click="gameShowHide(); instructionShowHide(); startTimer()">START
+			</button>
+		</div>
+	</div>
+
+	<!--Game Section-->
+	<div ng-show="gameVisible">
+		<div class="word-unscramble-container">
+			<div class="game-body">
+				<div class="game-container" on-drag-end="onDropComplete()">
+					<ul ng-sortable="{animation:150}">
+						<li ng-repeat="obj in draggableObjects">
+							<div class="sortable-item-inner">
+                              {{ obj }}
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="buttonHolder">
+			<table width="100%" class="actions">
+				<tr>
+					<td colspan="3">
+						<button ng-click="hintDiaglog()" class="button button-lg">HINT</button>
+					</td>
+					<td colspan="3">
+						<button ng-click="submitDialog()" class="button button-lg">SUBMIT</button>
+
+					</td>
+				</tr>
+				<tr>
+					<td width="33.3%" colspan="2">
+						<h3>Score:</h3>
+					</td>
+					<td width="33.3%" colspan="2" rowspan="2" class="valign-center">
+						<button ng-click="instructionShowHide (); gameShowHide()"
+						        class="button button-lg">
+							<i class="icon ion-help-circled "></i>
+						</button>
+					</td>
+					<td width="33.3%" colspan="2">
+						<h3>
+							Time:
+						</h3>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+
+						<span style="color:#d43f3a; font-size: 20px"> {{scoreMark}} </span>
+					</td>
+					<td colspan="2">
+						<span style="color:#d43f3a; font-size: 20px"> {{countDown}} </span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!--TimeOver modal-->
+		<script type="text/ng-template" id="timeOverId">
+			<h2> {{ popupTitle }}</h2>
+			<p>The word is
+				<span style="color:indianred; font-size: 20px; font-weight: bold;">  {{ correctWord  }} </span>
+			</p>
+			<div class="text-center">
+				<buton type="button" ng-click="replayTimer(); closeThisDialog('Click OK Button')"
+				       class="button button-sm">
+					OK
+				</buton>
+			</div>
+		</script>
+
+		<!--Submit modal-->
+		<script type="text/ng-template" id="submitId">
+			<div>
+				<h2> {{ submitMsg }}</h2>
+				<div class="text-center">
+					<button type="button" class="button button-sm"
+					        ng-click="isCorrect && replayTimer(); closeThisDialog('Click OK Button'); startTimer()">OK
+					</button>
+				</div>
+			</div>
+		</script>
+
+		<!-- Hint modal-->
+		<script type="text/ng-template" id="hintId">
+			<div>
+				<h3>The meaning of the word is:</h3>
+				<span style="color:indianred; font-size: 20px; font-weight: bold;">  {{ hintMsg  }} </span>
+				<div class="text-center">
+					<button type="button" class="button button-sm"
+					        ng-click="startTimer(); closeThisDialog('Click OK Button')">OK
+					</button>
+				</div>
+			</div>
+		</script>

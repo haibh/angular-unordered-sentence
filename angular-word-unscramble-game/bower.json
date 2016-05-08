@@ -1,0 +1,23 @@
+{
+  "name": "angular-unordered-sentence-game",
+  "homepage": "https://github.com/haibh/angular-unordered-sentence-game",
+  "version": "0.0.1-beta1",
+  "authors": [
+    "haibh <haibhut@gmail.com>"
+  ],
+  "description": "An English Unordered Sentence Game",
+  "main": "directive.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "sortable" : "rubaxa/sortable",
+  }
+}

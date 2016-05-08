@@ -1,0 +1,261 @@
+@import "../node_modules/compass-mixins/lib/_compass.scss";
+
+* {
+  @include box-sizing(border-box);
+}
+
+.button {
+  @include box-shadow(0px 10px 14px -7px #276873);
+  @include background(top, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  @include border-radius(8px);
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+
+  &:hover {
+    @include background(top, #408c99 5%, #599bb3 100%);
+    background-color: #408c99;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .button-sm {
+    padding: 7px 14px;
+  }
+
+  .button-lg {
+    padding: 13px 32px;
+  }
+
+  .ngdialog-button {
+    background-color: black;
+    color: white;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  &.actions {
+    margin-top: 50px;
+    &:last-of-type {
+      tr:last-child {
+        td {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  tr td {
+    padding-top: 20px;
+  }
+}
+
+.valign-center {
+  vertical-align: middle;
+}
+
+div.start-screen {
+  position: relative;
+  width: auto;
+  height: auto;
+
+  div.game-title {
+    clear: both;
+    height: 100px;
+    div.inner {
+      @include translateX(-50%);
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 50px;
+      position: absolute;
+      width: auto;
+      left: 50%;
+      line-height: 50px;
+      clear: both;
+      padding: 20px 50px 50px 50px;
+      div.word {
+        display: inline-block;
+        white-space: nowrap;
+        clear: both;
+        .angle {
+          display: inline-block;
+          white-space: nowrap;
+          float: left;
+          font-size: 80px;
+        }
+        .angle10 {
+          @include transform(rotate(340deg));
+        }
+        .angle10-minus {
+          @include transform(rotate(20deg));
+        }
+      }
+    }
+  }
+
+  div.game-middle {
+    height: 100px;
+    text-align: center;
+  }
+
+  div.game-footer {
+    clear: both;
+    height: 100px;
+    div.inner {
+      display: inline-block;
+      white-space: nowrap;
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      line-height: 50px;
+      clear: both;
+      @include translateX(-50%);
+      div.word {
+        text-align: center;
+        display: inline-block;
+        white-space: nowrap;
+        clear: both;
+        .angle {
+          display: inline-block;
+          white-space: nowrap;
+          float: left;
+          font-size: 50px;
+          padding: 5px 5px 5px 5px;
+          @include border-radius(12px 12px 12px 12px);
+          //border: 2px solid #ff44de;
+          background-color: #f9edb4;
+          box-shadow: 5px 5px #3d796f;
+        }
+        .angle10 {
+          @include transform(rotate(335deg));
+        }
+        .angle10-minus {
+          @include transform(rotate(25deg));
+        }
+      }
+    }
+  }
+}
+
+div.instruction-screen {
+  position: relative;
+
+  h2.instruction {
+    font-size: 50px;
+    line-height: 70px;
+    color: white;
+    text-shadow: 3px 3px 0 #325d51,
+    -1px -1px 0 #325d51,
+    1px -1px 0 #325d51,
+    -1px 1px 0 #325d51,
+    1px 1px 0 #325d51;
+  }
+  div.instruction-text {
+    font-size: 20px;
+    color: white;
+    text-shadow: 3px 3px 0 #325d51,
+    -1px -1px 0 #325d51,
+    1px -1px 0 #325d51,
+    -1px 1px 0 #325d51,
+    1px 1px 0 #325d51;
+    background-color: #398C57;
+    padding: 30px 15px 30px 15px;
+    margin: 20px 80px 20px 80px;
+    border-radius: 20px 20px 20px 20px;
+  }
+  div.instruction-button {
+    line-height: 100px;
+  }
+}
+//
+//.modal {
+//  text-align: center;
+//  background-color: transparent;
+//  position: inherit;
+//  display: table-footer-group;
+//  .modal-button {
+//    @include box-shadow(0px 10px 14px -7px #276873);
+//    @include background(top, #599bb3 5%, #408c99 100%);
+//    background-color: #599bb3;
+//    @include border-radius(8px);
+//    display: inline-block;
+//    cursor: pointer;
+//    color: #ffffff;
+//    font-family: Arial;
+//    font-size: 15px;
+//    font-weight: bold;
+//    padding: 5px 5px;
+//    text-decoration: none;
+//    text-shadow: 0px 1px 0px #3d768a;
+//    margin: 0px 0px 0px 180px;
+//  }
+//}
+
+
+
+.full-screen {
+  clear: both;
+  padding: 20px 0 0 0;
+  text-align: center;
+  background-color: rgb(164, 179, 87); /* Old Browsers */
+  @include background-image(linear-gradient(left, rgb(164, 179, 87) 0%, rgb(212, 236, 214) 0%, rgb(214, 237, 216) 100%));
+
+  &::before, &::after {
+    display: table;
+  }
+
+  .game-body {
+    background-color: #E27368;
+    padding: 30px 15px 30px 15px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
+    .game-container {
+      position: relative;
+      ul[ng-sortable] {
+        margin: auto;
+        white-space: nowrap;
+
+        li[ng-repeat] {
+          position: relative;
+          display: inline-block;
+
+          &.sortable-chosen {
+            &.sortable-ghost {
+              opacity: .2;
+              color: transparent;
+            }
+          }
+          .sortable-item-inner {
+            @include border-radius(12px 12px 12px 12px);
+            @include box-shadow(3px 3px 5px 0px #71a7a2);
+            margin: 2px;
+            background-color: #f9edb4;
+            color: black;
+            width: 55px;
+            padding: 5px;
+            font-size: 50px;
+            line-height: 50px;
+            cursor: pointer;
+            span {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
