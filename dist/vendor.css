@@ -1,0 +1,221 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.button {
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: -owg-top, -owg-#599bb3 5%, -owg-#408c99 100%;
+  background: -webkit-top, -webkit-#599bb3 5%, -webkit-#408c99 100%;
+  background: -moz-top, -moz-#599bb3 5%, -moz-#408c99 100%;
+  background: -o-top, -o-#599bb3 5%, -o-#408c99 100%;
+  -pie-background: -pie-top, -pie-#599bb3 5%, -pie-#408c99 100%;
+  background: top, #599bb3 5%, #408c99 100%;
+  background-color: #599bb3;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a; }
+  .button:hover {
+    background: -owg-top, -owg-#408c99 5%, -owg-#599bb3 100%;
+    background: -webkit-top, -webkit-#408c99 5%, -webkit-#599bb3 100%;
+    background: -moz-top, -moz-#408c99 5%, -moz-#599bb3 100%;
+    background: -o-top, -o-#408c99 5%, -o-#599bb3 100%;
+    -pie-background: -pie-top, -pie-#408c99 5%, -pie-#599bb3 100%;
+    background: top, #408c99 5%, #599bb3 100%;
+    background-color: #408c99; }
+  .button:active {
+    position: relative;
+    top: 1px; }
+  .button .button-sm {
+    padding: 7px 14px; }
+  .button .button-lg {
+    padding: 13px 32px; }
+  .button .ngdialog-button {
+    background-color: black;
+    color: white; }
+
+.text-center {
+  text-align: center; }
+
+table.actions {
+  margin-top: 50px; }
+  table.actions:last-of-type tr:last-child td {
+    padding-bottom: 10px; }
+
+table tr td {
+  padding-top: 20px; }
+
+.valign-center {
+  vertical-align: middle; }
+
+div.start-screen {
+  position: relative;
+  width: auto;
+  height: auto; }
+  div.start-screen div.game-title {
+    clear: both;
+    height: 100px; }
+    div.start-screen div.game-title div.inner {
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 50px;
+      position: absolute;
+      width: auto;
+      left: 50%;
+      line-height: 50px;
+      clear: both;
+      padding: 20px 50px 50px 50px; }
+      div.start-screen div.game-title div.inner div.word {
+        display: inline-block;
+        white-space: nowrap;
+        clear: both; }
+        div.start-screen div.game-title div.inner div.word .angle {
+          display: inline-block;
+          white-space: nowrap;
+          float: left;
+          font-size: 80px; }
+        div.start-screen div.game-title div.inner div.word .angle10 {
+          -webkit-transform: rotate(340deg);
+          -moz-transform: rotate(340deg);
+          -ms-transform: rotate(340deg);
+          -o-transform: rotate(340deg);
+          transform: rotate(340deg); }
+        div.start-screen div.game-title div.inner div.word .angle10-minus {
+          -webkit-transform: rotate(20deg);
+          -moz-transform: rotate(20deg);
+          -ms-transform: rotate(20deg);
+          -o-transform: rotate(20deg);
+          transform: rotate(20deg); }
+  div.start-screen div.game-middle {
+    height: 100px;
+    text-align: center; }
+  div.start-screen div.game-footer {
+    clear: both;
+    height: 100px; }
+    div.start-screen div.game-footer div.inner {
+      display: inline-block;
+      white-space: nowrap;
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      line-height: 50px;
+      clear: both;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      div.start-screen div.game-footer div.inner div.word {
+        text-align: center;
+        display: inline-block;
+        white-space: nowrap;
+        clear: both; }
+        div.start-screen div.game-footer div.inner div.word .angle {
+          display: inline-block;
+          white-space: nowrap;
+          float: left;
+          font-size: 50px;
+          padding: 5px 5px 5px 5px;
+          -webkit-border-radius: 12px 12px 12px 12px;
+          -moz-border-radius: 12px 12px 12px 12px;
+          -ms-border-radius: 12px 12px 12px 12px;
+          -o-border-radius: 12px 12px 12px 12px;
+          border-radius: 12px 12px 12px 12px;
+          background-color: #f9edb4;
+          box-shadow: 5px 5px #3d796f; }
+        div.start-screen div.game-footer div.inner div.word .angle10 {
+          -webkit-transform: rotate(335deg);
+          -moz-transform: rotate(335deg);
+          -ms-transform: rotate(335deg);
+          -o-transform: rotate(335deg);
+          transform: rotate(335deg); }
+        div.start-screen div.game-footer div.inner div.word .angle10-minus {
+          -webkit-transform: rotate(25deg);
+          -moz-transform: rotate(25deg);
+          -ms-transform: rotate(25deg);
+          -o-transform: rotate(25deg);
+          transform: rotate(25deg); }
+
+div.instruction-screen {
+  position: relative; }
+  div.instruction-screen h2.instruction {
+    font-size: 50px;
+    line-height: 70px;
+    color: white;
+    text-shadow: 3px 3px 0 #325d51, -1px -1px 0 #325d51, 1px -1px 0 #325d51, -1px 1px 0 #325d51, 1px 1px 0 #325d51; }
+  div.instruction-screen div.instruction-text {
+    font-size: 20px;
+    color: white;
+    text-shadow: 3px 3px 0 #325d51, -1px -1px 0 #325d51, 1px -1px 0 #325d51, -1px 1px 0 #325d51, 1px 1px 0 #325d51;
+    background-color: #398C57;
+    padding: 30px 15px 30px 15px;
+    margin: 20px 80px 20px 80px;
+    border-radius: 20px 20px 20px 20px; }
+  div.instruction-screen div.instruction-button {
+    line-height: 100px; }
+
+.full-screen {
+  clear: both;
+  padding: 20px 0 0 0;
+  text-align: center;
+  background-color: #a4b357;
+  /* Old Browsers */
+  background-image: -owg-linear-gradient(left, #a4b357 0%, #d4ecd6 0%, #d6edd8 100%);
+  background-image: -webkit-linear-gradient(left, #a4b357 0%, #d4ecd6 0%, #d6edd8 100%);
+  background-image: -moz-linear-gradient(left, #a4b357 0%, #d4ecd6 0%, #d6edd8 100%);
+  background-image: -o-linear-gradient(left, #a4b357 0%, #d4ecd6 0%, #d6edd8 100%);
+  background-image: linear-gradient(left, #a4b357 0%, #d4ecd6 0%, #d6edd8 100%); }
+  .full-screen::before, .full-screen::after {
+    display: table; }
+  .full-screen .game-body {
+    background-color: #E27368;
+    padding: 30px 15px 30px 15px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px; }
+    .full-screen .game-body .game-container {
+      position: relative; }
+      .full-screen .game-body .game-container ul[ng-sortable] {
+        margin: auto;
+        white-space: nowrap; }
+        .full-screen .game-body .game-container ul[ng-sortable] li[ng-repeat] {
+          position: relative;
+          display: inline-block; }
+          .full-screen .game-body .game-container ul[ng-sortable] li[ng-repeat].sortable-chosen.sortable-ghost {
+            opacity: .2;
+            color: transparent; }
+          .full-screen .game-body .game-container ul[ng-sortable] li[ng-repeat] .sortable-item-inner {
+            -webkit-border-radius: 12px 12px 12px 12px;
+            -moz-border-radius: 12px 12px 12px 12px;
+            -ms-border-radius: 12px 12px 12px 12px;
+            -o-border-radius: 12px 12px 12px 12px;
+            border-radius: 12px 12px 12px 12px;
+            -webkit-box-shadow: 3px 3px 5px 0px #71a7a2;
+            -moz-box-shadow: 3px 3px 5px 0px #71a7a2;
+            box-shadow: 3px 3px 5px 0px #71a7a2;
+            margin: 2px;
+            background-color: #f9edb4;
+            color: black;
+            width: 55px;
+            padding: 5px;
+            font-size: 50px;
+            line-height: 50px;
+            cursor: pointer; }
+            .full-screen .game-body .game-container ul[ng-sortable] li[ng-repeat] .sortable-item-inner span {
+              cursor: pointer; }
