@@ -1,7 +1,7 @@
-angular.module('st2forget.word-unscramble-game', [
+angular.module('haibh.unordered-sentence-game', [
   'ng-sortable',
   'ngDialog'
-]).directive('wordUnscrambleGame', function () {
+]).directive('unorderedSentenceGame', function () {
     // var model = { //queston
     //   Id: 1,
     //   Statement: 'LOVE',
@@ -17,7 +17,7 @@ angular.module('st2forget.word-unscramble-game', [
     };  
 
     return {
-      controllerAs: 'wordUnscrambleGame',
+      controllerAs: 'unorderedSentenceGame',
       controller: ['$attrs', '$scope', '$element', '$interval', 'ngDialog', function ($attrs, $scope, $element, $interval, ngDialog) {
 
         /*Declare local variable*/
