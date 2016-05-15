@@ -14,7 +14,7 @@ angular.module('haibh.unordered-sentence-game', [
       });
       $element.on('', function (e) {
       });
-    };  
+    };
 
     return {
       controllerAs: 'unorderedSentenceGame',
@@ -63,7 +63,7 @@ angular.module('haibh.unordered-sentence-game', [
         /*Directive URL*/
         $scope.directiveRootPath = $attrs.directiveRootPath;
         $scope.getTemplateUrl = function () {
-          return $scope.directiveRootPath + '/angular-word-unscramble-game/templates/unordered-sentence.html';
+          return $scope.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
         };
 
         /*Add timer*/

@@ -180,31 +180,6 @@ div.instruction-screen {
     line-height: 100px;
   }
 }
-//
-//.modal {
-//  text-align: center;
-//  background-color: transparent;
-//  position: inherit;
-//  display: table-footer-group;
-//  .modal-button {
-//    @include box-shadow(0px 10px 14px -7px #276873);
-//    @include background(top, #599bb3 5%, #408c99 100%);
-//    background-color: #599bb3;
-//    @include border-radius(8px);
-//    display: inline-block;
-//    cursor: pointer;
-//    color: #ffffff;
-//    font-family: Arial;
-//    font-size: 15px;
-//    font-weight: bold;
-//    padding: 5px 5px;
-//    text-decoration: none;
-//    text-shadow: 0px 1px 0px #3d768a;
-//    margin: 0px 0px 0px 180px;
-//  }
-//}
-
-
 
 .full-screen {
   clear: both;
@@ -257,5 +232,4 @@ div.instruction-screen {
       }
     }
   }
-
 }

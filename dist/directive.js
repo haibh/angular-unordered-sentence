@@ -31437,7 +31437,7 @@
 
 	'use strict';
 
-	angular.module('st2forget.word-unscramble-game', ['ng-sortable', 'ngDialog']).directive('wordUnscrambleGame', function () {
+	angular.module('haibh.unordered-sentence-game', ['ng-sortable', 'ngDialog']).directive('unorderedSentenceGame', function () {
 	  // var model = { //queston
 	  //   Id: 1,
 	  //   Statement: 'LOVE',
@@ -31453,7 +31453,7 @@
 	  };
 
 	  return {
-	    controllerAs: 'wordUnscrambleGame',
+	    controllerAs: 'unorderedSentenceGame',
 	    controller: ['$attrs', '$scope', '$element', '$interval', 'ngDialog', function ($attrs, $scope, $element, $interval, ngDialog) {
 
 	      /*Declare local variable*/
@@ -31501,7 +31501,7 @@
 	      /*Directive URL*/
 	      $scope.directiveRootPath = $attrs.directiveRootPath;
 	      $scope.getTemplateUrl = function () {
-	        return $scope.directiveRootPath + '/angular-word-unscramble-game/templates/word-unscramble.html';
+	        return $scope.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
 	      };
 
 	      /*Add timer*/
