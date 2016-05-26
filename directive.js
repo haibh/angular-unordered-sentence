@@ -2,11 +2,6 @@ angular.module('haibh.unordered-sentence-game', [
   'ng-sortable',
   'ngDialog'
 ]).directive('unorderedSentenceGame', function () {
-    // var model = { //queston
-    //   Id: 1,
-    //   Statement: 'LOVE',
-    //   Hint: 'Thing that everyone need most'
-    // };
 
     var link = function ($scope, $element) { // create link
       $element.on('click', function (e) {
@@ -20,12 +15,20 @@ angular.module('haibh.unordered-sentence-game', [
       controllerAs: 'unorderedSentenceGame',
       controller: ['$attrs', '$scope', '$element', '$interval', 'ngDialog', function ($attrs, $scope, $element, $interval, ngDialog) {
 
+        /*Directive URL*/
+        $scope.directiveRootPath = $attrs.directiveRootPath;
+        $scope.getTemplateUrl = function () {
+          return $scope.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
+        };
+
+
         /*Declare local variable*/
         var shuffleChars = []; // Get current words
-        var scoreIncrement = 1000;
-        var totalTime = 20000;
+        var scoreIncrement = 100;
+        var totalTime = 3000000;
+        var sentenceTime = 5000;
 
-        /*// Declare $scope variable*/
+        /* Declare $scope variable*/
         $scope.modelSentence = 'This is an sentence'; // For detect sentence
         $scope.gameType = $attrs.gameType;
         $scope.correctWord = $scope.model.Statement;
@@ -33,17 +36,23 @@ angular.module('haibh.unordered-sentence-game', [
         $scope.hintMsg = $scope.model.Hint;
         $scope.scoreMark = 0;
 
-        $scope.startVisible = false; //Show and Hide Start Button
+        /*Show Hide Section*/
+        $scope.startVisible = false; //Show and Hide Start Section
         $scope.startShowHide = function () {
           $scope.startVisible = $scope.startVisible ? false : true;
         };
 
-        $scope.instructionVisible = false; //Show and Hide Start Button
+        $scope.instructionVisible = false; //Show and Hide Instruction Section
         $scope.instructionShowHide = function () {
           $scope.instructionVisible = $scope.instructionVisible ? false : true;
         };
 
-        $scope.gameVisible = false; // Show and Hide Game
+        $scope.scoreVisible = false; //Show and Hide Score Section
+        $scope.scoreShowHide = function () {
+          $scope.scoreVisible = $scope.scoreVisible ? false : true;
+        };
+
+        $scope.gameVisible = false; // Show and Hide Game Section
         $scope.gameShowHide = function () {
           $scope.gameVisible = $scope.gameVisible ? false : true;
         };
@@ -60,11 +69,6 @@ angular.module('haibh.unordered-sentence-game', [
           console.log(shuffleChars);
         };
 
-        /*Directive URL*/
-        $scope.directiveRootPath = $attrs.directiveRootPath;
-        $scope.getTemplateUrl = function () {
-          return $scope.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
-        };
 
         /*Add timer*/
         $scope.countDown = totalTime;
@@ -76,7 +80,8 @@ angular.module('haibh.unordered-sentence-game', [
             $scope.countDown -= 10;
             if ($scope.countDown <= 0) {
               $scope.stopTimer();
-              $scope.timeOverDialog()
+              $scope.scoreShowHide();
+              $scope.gameShowHide();
             }
           }, 10)
         };

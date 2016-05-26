@@ -4,12 +4,14 @@
   @include box-sizing(border-box);
 }
 
-.button {
+.unordered-sentence-button {
   @include box-shadow(0px 10px 14px -7px #276873);
   @include background(top, #599bb3 5%, #408c99 100%);
   background-color: #599bb3;
   @include border-radius(8px);
   display: inline-block;
+  padding: 5px;
+  margin: 5px;
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
@@ -28,15 +30,15 @@
     top: 1px;
   }
 
-  .button-sm {
+  .unordered-sentence-button-sm {
     padding: 7px 14px;
   }
 
-  .button-lg {
+  .unordered-sentence-button-lg {
     padding: 13px 32px;
   }
 
-  .ngdialog-button {
+  .ngdialog-unordered-sentence-button {
     background-color: black;
     color: white;
   }
@@ -67,6 +69,12 @@ table {
   vertical-align: middle;
 }
 
+@font-face {
+  // Test Cloud Font
+  font-family: AlphaCloudsFont;
+  src: url(AlphaClouds.ttf);
+}
+
 div.start-screen {
   position: relative;
   width: auto;
@@ -86,107 +94,27 @@ div.start-screen {
       line-height: 50px;
       clear: both;
       padding: 20px 50px 50px 50px;
-      div.word {
+      div.unordered-sentence-word {
+        font-family: AlphaCloudsFont; // test cloud font
         display: inline-block;
         white-space: nowrap;
         clear: both;
-        .angle {
-          display: inline-block;
-          white-space: nowrap;
-          float: left;
-          font-size: 80px;
-        }
-        .angle10 {
-          @include transform(rotate(340deg));
-        }
-        .angle10-minus {
-          @include transform(rotate(20deg));
-        }
+        font-size: 30px;
       }
     }
   }
 
-  div.game-middle {
-    height: 100px;
+  div.unordered-sentence-game-middle {
+    height: 200px;
     text-align: center;
   }
-
-  div.game-footer {
-    clear: both;
-    height: 100px;
-    div.inner {
-      display: inline-block;
-      white-space: nowrap;
-      position: absolute;
-      width: 100%;
-      left: 50%;
-      line-height: 50px;
-      clear: both;
-      @include translateX(-50%);
-      div.word {
-        text-align: center;
-        display: inline-block;
-        white-space: nowrap;
-        clear: both;
-        .angle {
-          display: inline-block;
-          white-space: nowrap;
-          float: left;
-          font-size: 50px;
-          padding: 5px 5px 5px 5px;
-          @include border-radius(12px 12px 12px 12px);
-          //border: 2px solid #ff44de;
-          background-color: #f9edb4;
-          box-shadow: 5px 5px #3d796f;
-        }
-        .angle10 {
-          @include transform(rotate(335deg));
-        }
-        .angle10-minus {
-          @include transform(rotate(25deg));
-        }
-      }
-    }
-  }
 }
 
-div.instruction-screen {
-  position: relative;
-
-  h2.instruction {
-    font-size: 50px;
-    line-height: 70px;
-    color: white;
-    text-shadow: 3px 3px 0 #325d51,
-    -1px -1px 0 #325d51,
-    1px -1px 0 #325d51,
-    -1px 1px 0 #325d51,
-    1px 1px 0 #325d51;
-  }
-  div.instruction-text {
-    font-size: 20px;
-    color: white;
-    text-shadow: 3px 3px 0 #325d51,
-    -1px -1px 0 #325d51,
-    1px -1px 0 #325d51,
-    -1px 1px 0 #325d51,
-    1px 1px 0 #325d51;
-    background-color: #398C57;
-    padding: 30px 15px 30px 15px;
-    margin: 20px 80px 20px 80px;
-    border-radius: 20px 20px 20px 20px;
-  }
-  div.instruction-button {
-    line-height: 100px;
-  }
-}
-
-.full-screen {
+.unordered-sentence-full-screen {
   clear: both;
   padding: 20px 0 0 0;
   text-align: center;
-  background-color: rgb(164, 179, 87); /* Old Browsers */
-  @include background-image(linear-gradient(left, rgb(164, 179, 87) 0%, rgb(212, 236, 214) 0%, rgb(214, 237, 216) 100%));
+  @include background-image(linear-gradient(left, rgb(135,206,250) 0%, rgb(135,206,250) 0%, rgb(135,206,250) 100%));
 
   &::before, &::after {
     display: table;
@@ -216,13 +144,13 @@ div.instruction-screen {
           .sortable-item-inner {
             @include border-radius(12px 12px 12px 12px);
             @include box-shadow(3px 3px 5px 0px #71a7a2);
-            margin: 2px;
+            margin: 13px;
             background-color: #f9edb4;
             color: black;
-            width: 55px;
+            width: 140px;
             padding: 5px;
-            font-size: 50px;
-            line-height: 50px;
+            font-size: 49px;
+            line-height: 48px;
             cursor: pointer;
             span {
               cursor: pointer;
