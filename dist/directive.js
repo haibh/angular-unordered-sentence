@@ -164,8 +164,8 @@
 
 							evt.from.insertBefore(evt.item, nextSibling); // revert element
 						} else {
-								items.splice(newIndex, 0, items.splice(oldIndex, 1)[0]);
-							}
+							items.splice(newIndex, 0, items.splice(oldIndex, 1)[0]);
+						}
 
 						scope.$apply();
 					}
@@ -1004,7 +1004,7 @@
 	   */
 	  function isElement(node) {
 	    return !!(node && (node.nodeName // we are a direct element
-	     || node.prop && node.attr && node.find)); // we have an on and find method part of jQuery API
+	    || node.prop && node.attr && node.find)); // we have an on and find method part of jQuery API
 	  }
 
 	  /**
@@ -6104,12 +6104,12 @@
 	        return self;
 	        // getter
 	      } else {
-	          // - pendingLocation is needed as browsers don't allow to read out
-	          //   the new location.href if a reload happened or if there is a bug like in iOS 9 (see
-	          //   https://openradar.appspot.com/22186109).
-	          // - the replacement is a workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=407172
-	          return pendingLocation || location.href.replace(/%27/g, "'");
-	        }
+	        // - pendingLocation is needed as browsers don't allow to read out
+	        //   the new location.href if a reload happened or if there is a bug like in iOS 9 (see
+	        //   https://openradar.appspot.com/22186109).
+	        // - the replacement is a workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=407172
+	        return pendingLocation || location.href.replace(/%27/g, "'");
+	      }
 	    };
 
 	    /**
@@ -9146,9 +9146,9 @@
 	            //Otherwise attempt getting the controller from elementControllers in case
 	            //the element is transcluded (and has no data) and to avoid .data if possible
 	          } else {
-	              value = elementControllers && elementControllers[name];
-	              value = value && value.instance;
-	            }
+	            value = elementControllers && elementControllers[name];
+	            value = value && value.instance;
+	          }
 
 	          if (!value) {
 	            var dataName = '$' + name + 'Controller';
@@ -9310,9 +9310,9 @@
 	            // You will get an "InvalidCharacterError: DOM Exception 5" error if you
 	            // have an attribute like "has-own-property" or "data-has-own-property", etc.
 	          } else if (key.charAt(0) != '$' && !dst.hasOwnProperty(key)) {
-	              dst[key] = value;
-	              dstAttr[key] = srcAttr[key];
-	            }
+	            dst[key] = value;
+	            dstAttr[key] = srcAttr[key];
+	          }
 	        });
 	      }
 
@@ -13390,6 +13390,7 @@
 	  //
 	  // See https://docs.angularjs.org/guide/security
 
+
 	  function ensureSafeMemberName(name, fullExpression) {
 	    if (name === "__defineGetter__" || name === "__defineSetter__" || name === "__lookupGetter__" || name === "__lookupSetter__" || name === "__proto__") {
 	      throw $parseMinErr('isecfld', 'Attempting to access a disallowed field in Angular expressions! ' + 'Expression: {0}', fullExpression);
@@ -13450,7 +13451,7 @@
 
 	  function ensureSafeAssignContext(obj, fullExpression) {
 	    if (obj) {
-	      if (obj === 0..constructor || obj === false.constructor || obj === ''.constructor || obj === {}.constructor || obj === [].constructor || obj === Function.constructor) {
+	      if (obj === 0 .constructor || obj === false.constructor || obj === ''.constructor || obj === {}.constructor || obj === [].constructor || obj === Function.constructor) {
 	        throw $parseMinErr('isecaf', 'Assigning to a constructor is disallowed! Expression: {0}', fullExpression);
 	      }
 	    }
@@ -13463,6 +13464,7 @@
 	  var ESCAPE = { "n": "\n", "f": "\f", "r": "\r", "t": "\t", "v": "\v", "'": "'", '"': '"' };
 
 	  /////////////////////////////////////////
+
 
 	  /**
 	   * @constructor
@@ -16717,7 +16719,7 @@
 
 	            // `break traverseScopesLoop;` takes us to here
 
-	            if ((dirty || asyncQueue.length) && ! ttl--) {
+	            if ((dirty || asyncQueue.length) && !ttl--) {
 	              clearPhase();
 	              throw $rootScopeMinErr('infdig', '{0} $digest() iterations reached. Aborting!\n' + 'Watchers fired in the last 5 iterations: {1}', TTL, watchLog);
 	            }
@@ -27239,6 +27241,7 @@
 	  // 9: track by expression
 	  // jshint maxlen: 100
 
+
 	  var ngOptionsDirective = ['$compile', '$parse', function ($compile, $parse) {
 
 	    function parseOptionsExpression(optionsExp, selectElement, scope) {
@@ -27573,6 +27576,7 @@
 	      scope.$watchCollection(ngOptions.getWatchables, updateOptions);
 
 	      // ------------------------------------------------------------------ //
+
 
 	      function updateOptionElement(option, element) {
 	        option.element = element;
@@ -29419,13 +29423,13 @@
 	        $element.val(value);
 	        if (value === '') self.emptyOption.prop('selected', true); // to make IE9 happy
 	      } else {
-	          if (value == null && self.emptyOption) {
-	            self.removeUnknownOption();
-	            $element.val('');
-	          } else {
-	            self.renderUnknownOption(value);
-	          }
+	        if (value == null && self.emptyOption) {
+	          self.removeUnknownOption();
+	          $element.val('');
+	        } else {
+	          self.renderUnknownOption(value);
 	        }
+	      }
 	    };
 
 	    // Tell the select control that an option, with the given value, has been added
@@ -30308,9 +30312,9 @@
 		} else if (typeof Package !== "undefined") {
 			Sortable = factory(); // export for Meteor.js
 		} else {
-				/* jshint sub:true */
-				window["Sortable"] = factory();
-			}
+			/* jshint sub:true */
+			window["Sortable"] = factory();
+		}
 	})(function () {
 		"use strict";
 
@@ -30542,20 +30546,20 @@
 						return; // cancel dnd
 					}
 				} else if (filter) {
-						filter = filter.split(',').some(function (criteria) {
-							criteria = _closest(originalTarget, criteria.trim(), el);
+					filter = filter.split(',').some(function (criteria) {
+						criteria = _closest(originalTarget, criteria.trim(), el);
 
-							if (criteria) {
-								_dispatchEvent(_this, criteria, 'filter', target, el, oldIndex);
-								return true;
-							}
-						});
-
-						if (filter) {
-							evt.preventDefault();
-							return; // cancel dnd
+						if (criteria) {
+							_dispatchEvent(_this, criteria, 'filter', target, el, oldIndex);
+							return true;
 						}
+					});
+
+					if (filter) {
+						evt.preventDefault();
+						return; // cancel dnd
 					}
+				}
 
 				if (options.handle && !_closest(originalTarget, options.handle, el)) {
 					return;
@@ -31438,6 +31442,12 @@
 	'use strict';
 
 	angular.module('haibh.unordered-sentence-game', ['ng-sortable', 'ngDialog']).directive('unorderedSentenceGame', function () {
+	  var shuffleChars = [],
+	      // Get current words
+	  scoreIncrement = 100,
+	      interval = null,
+	      totalTime = 300,
+	      sentenceTime = 5000;
 
 	  var link = function link($scope, $element) {
 	    // create link
@@ -31447,162 +31457,235 @@
 	    $element.on('', function (e) {});
 	  };
 
-	  return {
-	    controllerAs: 'unorderedSentenceGame',
-	    controller: ['$attrs', '$scope', '$element', '$interval', 'ngDialog', function ($attrs, $scope, $element, $interval, ngDialog) {
+	  /*Timer Function*/
+	  var startTimer = function startTimer() {
+	    var self = this;
+	    this.stopTimer();
+	    interval = self.interval(function () {
+	      self.countDown -= 1;
+	      if (self.countDown <= 0) {
+	        self.stopTimer();
+	        self.timeOverDialog();
+	      }
+	    }, 1000);
+	  };
 
-	      /*Directive URL*/
-	      $scope.directiveRootPath = $attrs.directiveRootPath;
-	      $scope.getTemplateUrl = function () {
-	        return $scope.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
-	      };
+	  var stopTimer = function stopTimer() {
+	    this.interval.cancel(interval);
+	  };
 
-	      /*Declare local variable*/
-	      var shuffleChars = []; // Get current words
-	      var scoreIncrement = 100;
-	      var totalTime = 3000000;
-	      var sentenceTime = 5000;
+	  var replayTimer = function replayTimer() {
+	    this.countDown = totalTime;
+	    interval = null;
+	    this.startTimer();
+	  };
 
-	      /* Declare $scope variable*/
-	      $scope.modelSentence = 'This is an sentence'; // For detect sentence
-	      $scope.gameType = $attrs.gameType;
-	      $scope.correctWord = $scope.model.Statement;
-	      $scope.isCorrect = false;
-	      $scope.hintMsg = $scope.model.Hint;
-	      $scope.scoreMark = 0;
+	  var getTemplateUrl = function getTemplateUrl() {
+	    return this.directiveRootPath + '/angular-unordered-sentence-game/templates/unordered-sentence.html';
+	  };
 
-	      /*Show Hide Section*/
-	      $scope.startVisible = false; //Show and Hide Start Section
-	      $scope.startShowHide = function () {
-	        $scope.startVisible = $scope.startVisible ? false : true;
-	      };
+	  var timeOverDialog = function timeOverDialog() {
+	    // Time Over Dialog
+	    var self = this;
+	    this.stopTimer();
+	    this.popupTitle = 'Time up!';
+	    this.draggableObjects = _.shuffle(this.model.Statement.split(' '));
 
-	      $scope.instructionVisible = false; //Show and Hide Instruction Section
-	      $scope.instructionShowHide = function () {
-	        $scope.instructionVisible = $scope.instructionVisible ? false : true;
-	      };
+	    if (this.countDown <= 0) {
+	      this.interval.cancel(interval);
+	    }
+	    this.countDown = totalTime;
 
-	      $scope.scoreVisible = false; //Show and Hide Score Section
-	      $scope.scoreShowHide = function () {
-	        $scope.scoreVisible = $scope.scoreVisible ? false : true;
-	      };
+	    this.ngDialog.openConfirm({
+	      template: 'timeOverId',
+	      className: 'ngdialog-theme-default',
+	      scope: this
+	    }).then(function (value) {
+	      self.startTimer();
+	    }, function (reason) {
+	      self.startTimer();
+	      self.randomWords();
+	      console.log("TimeOver modal promise rejected. Reason: " + reason);
+	    });
+	  };
 
-	      $scope.gameVisible = false; // Show and Hide Game Section
-	      $scope.gameShowHide = function () {
-	        $scope.gameVisible = $scope.gameVisible ? false : true;
-	      };
+	  var submitDialog = function submitDialog() {
+	    // Submit Dialog
+	    this.stopTimer();
+	    interval = null;
+	    shuffleChars = this.draggableObjects.join('');
+	    if (shuffleChars == this.model.Statement) {
+	      //Checking Status
+	      this.isCorrect = true;
+	      this.scoreMark += 10 * scoreIncrement;
+	      this.submitMsg = 'Correct !';
+	      this.shuffeChars();
+	      this.countDown = totalTime;
+	    } else {
+	      this.scoreMark -= 2 * scoreIncrement;
+	      this.submitMsg = 'Sorry, the word you entered is not in our dictionary';
+	    }
 
-	      $scope.shuffeChars = function () {
-	        // Shuffle Character
-	        var charsArray = _.shuffle($scope.model.Statement.split($scope.gameType == 'word' ? '' : ' ')); // Shuffle original word
-	        // console.log(charsArray);
-	        $scope.draggableObjects = charsArray;
-	      };
-	      $scope.shuffeChars();
+	    this.ngDialog.openConfirm({
+	      template: 'submitId',
+	      className: 'ngdialog-theme-default',
+	      scope: this
+	    }).then(function (value) {
+	      this.startTimer();
+	      console.log("Confirm");
+	    }, function (reason) {
+	      this.startTimer();
+	      console.log("Submit modal promise rejected. Reason: " + reason);
+	    });
+	  };
 
-	      $scope.onDropComplete = function () {
-	        // Change position
-	        shuffleChars = $scope.draggableObjects.join('');
-	        console.log(shuffleChars);
-	      };
+	  var hintDiaglog = function hintDiaglog() {
+	    // Hint Dialog
+	    this.stopTimer();
+	    this.ngDialog.openConfirm({
+	      template: 'hintId',
+	      className: 'ngdialog-theme-default',
+	      scope: this
+	    }).then(function (value) {
+	      this.startTimer();
+	      console.log("Confirm");
+	    }, function (reason) {
+	      this.startTimer();
+	      console.log("Hint modal promise rejected. Reason: " + reason);
+	    });
+	  };
 
-	      /*Add timer*/
-	      $scope.countDown = totalTime;
-	      var interval = null;
+	  var randomWords = function randomWords() {
+	    var randomNumber = _.random(0, 3);
+	    var listOfWords = this.listOfWOrds;
+	    // console.log("List: " + listOfWords);
+	    console.log(listOfWords[randomNumber]);
 
-	      $scope.startTimer = function () {
+	    this.model.ID = randomNumber;
+	    this.model.Statement = listOfWords[randomNumber][0];
+	    this.model.Hint = listOfWords[randomNumber][1];
+
+	    this.letterCount = this.model.Statement.length;
+	    this.draggableObjects = _.shuffle(this.model.Statement.split(' '));
+	  };
+
+	  var windowResizeChange = function windowResizeChange() {
+	    this.letterWidth = this.windowsInnerWidth / (this.letterCount + 5) + 'px';
+
+	    this.sortableItemInner = {
+	      'width': this.letterWidth
+	    };
+	  };
+
+	  var exitWordUnscramble = function exitWordUnscramble() {
+	    try {
+	      if (Native && typeof Native == "function") {
+	        Native("dataCallback", quizID);
+	      }
+	    } catch (err) {
+	      //logError(err);
+	      console.log("ERROR FUNCTION");
+	    }
+	  };
+
+	  var init = function init($attrs, $scope, $element, $interval, $http, $window, ngDialog) {
+
+	    /*Test Randomword*/
+	    $scope.model = {
+	      ID: null,
+	      Statement: null,
+	      Hint: null
+	    };
+
+	    // var randomNumber = _.random(0, 3);
+	    // var listOfWords = $scope.listOfWOrds;
+	    // $scope.model.ID = randomNumber;
+	    // $scope.model.Statement = listOfWords[randomNumber][0];
+	    // $scope.model.Hint = listOfWords[randomNumber][1];
+
+	    /*// Declare $scope variable*/
+	    $scope.directiveRootPath = $attrs.directiveRootPath;
+	    $scope.modelSentence = 'This is an sentence'; // For detect sentence
+	    $scope.gameType = $attrs.gameType;
+	    $scope.correctWord = $scope.model.Statement;
+	    $scope.isCorrect = false;
+	    $scope.hintMsg = $scope.model.Hint;
+	    $scope.scoreMark = 0;
+	    $scope.ngDialog = ngDialog;
+	    $scope.interval = $interval;
+	    // $scope.shuffeChars = shuffleChars;
+	    $scope.countDown = totalTime;
+
+	    /*Declare function for $scope*/
+	    // $scope.shuffeChars = shuffeCharsFn;
+	    $scope.getTemplateUrl = getTemplateUrl;
+	    $scope.startTimer = startTimer;
+	    $scope.stopTimer = stopTimer;
+	    $scope.replayTimer = replayTimer;
+	    $scope.submitDialog = submitDialog;
+	    $scope.timeOverDialog = timeOverDialog;
+	    $scope.hintDiaglog = hintDiaglog;
+	    $scope.randomWords = randomWords;
+	    $scope.windowResizeChange = windowResizeChange;
+	    $scope.exitWordUnscramble = exitWordUnscramble;
+
+	    $scope.onDropComplete = function () {
+	      // Change position
+	      shuffleChars = $scope.draggableObjects.join(' ');
+	      // console.log(shuffleChars);
+	      // console.log($scope.model.Statement);
+
+	      if (shuffleChars == $scope.model.Statement) {
 	        $scope.stopTimer();
-	        interval = $interval(function () {
-	          $scope.countDown -= 10;
-	          if ($scope.countDown <= 0) {
-	            $scope.stopTimer();
-	            $scope.scoreShowHide();
-	            $scope.gameShowHide();
-	          }
-	        }, 10);
-	      };
-
-	      $scope.stopTimer = function () {
-	        $interval.cancel(interval);
-	      };
-
-	      $scope.replayTimer = function () {
+	        $scope.submitMsg = 'Correct !';
+	        $scope.isCorrect = true;
+	        $scope.scoreMark += 10 * scoreIncrement;
+	        $scope.draggableObjects = _.shuffle($scope.model.Statement.split(' '));
 	        $scope.countDown = totalTime;
-	        interval = null;
-	        $scope.startTimer();
-	      };
+	        $scope.randomWords();
 
-	      /* Add Popup from ngDialog */
-	      $scope.timeOverDialog = function () {
-	        // Time Over Dialog
-	        $scope.stopTimer();
-	        $scope.popupTitle = 'Time up!';
-	        $scope.shuffeChars();
-	        console.log("CountDown: " + $scope.countDown);
-	        console.log("Interval: " + interval);
-	        if ($scope.countDown <= 0) {
-	          $interval.cancel(interval);
-	        }
-	        $scope.countDown = totalTime;
-
-	        ngDialog.openConfirm({
-	          template: 'timeOverId',
-	          className: 'ngdialog-theme-default',
-	          scope: $scope
-	        }).then(function (value) {
-	          $scope.startTimer();
-	          console.log("Confirm");
-	        }, function (reason) {
-	          $scope.startTimer();
-	          console.log("TimeOver modal promise rejected. Reason: " + reason);
-	        });
-	      };
-
-	      $scope.submitDialog = function () {
-	        // Submit Dialog
-	        $scope.stopTimer();
-	        interval = null;
-	        shuffleChars = $scope.draggableObjects.join('');
-	        if (shuffleChars == $scope.model.Statement) {
-	          //Checking Status
-	          $scope.isCorrect = true;
-	          $scope.scoreMark += 10 * scoreIncrement;
-	          $scope.submitMsg = 'Correct !';
-	          $scope.shuffeChars();
-	          $scope.countDown = totalTime;
-	        } else {
-	          $scope.scoreMark -= 2 * scoreIncrement;
-	          $scope.submitMsg = 'Sorry, the word you entered is not in our dictionary';
-	        }
-
-	        ngDialog.openConfirm({
+	        $scope.ngDialog.openConfirm({
 	          template: 'submitId',
 	          className: 'ngdialog-theme-default',
-	          scope: $scope
-	        }).then(function (value) {
-	          $scope.startTimer();
+	          scope: this
+	        }).then(function () {
+	          $scope.replayTimer();
 	          console.log("Confirm");
 	        }, function (reason) {
-	          $scope.startTimer();
+	          $scope.replayTimer();
 	          console.log("Submit modal promise rejected. Reason: " + reason);
 	        });
-	      };
+	      } else {
+	        $scope.scoreMark -= 2 * scoreIncrement;
+	      }
+	    };
 
-	      $scope.hintDiaglog = function (rel) {
-	        // Hint Dialog
-	        $scope.stopTimer();
-	        ngDialog.openConfirm({
-	          template: 'hintId',
-	          className: 'ngdialog-theme-default',
-	          scope: $scope
-	        }).then(function (value) {
-	          $scope.startTimer();
-	          console.log("Confirm");
-	        }, function (reason) {
-	          $scope.startTimer();
-	          console.log("Hint modal promise rejected. Reason: " + reason);
-	        });
-	      };
+	    /*Running */
+	    $scope.randomWords(); // Change words
+	    $scope.hintMsg = $scope.model.Hint;
+	    $scope.draggableObjects = _.shuffle($scope.model.Statement.split(' '));
+
+	    /*Edit letter size*/
+	    $scope.letterWidth = $window.innerWidth / ($scope.letterCount + 5) + 'px';
+	    $scope.sortableItemInner = { // Defaull CSS for each letter
+	      'width': $scope.letterWidth
+	    };
+
+	    angular.element($window).bind('resize', function () {
+	      $scope.windowsInnerWidth = $window.innerWidth;
+	      $scope.windowResizeChange();
+	    });
+	  };
+
+	  return {
+	    controllerAs: 'unorderedSentenceGame',
+	    controller: ['$attrs', '$scope', '$element', '$interval', '$http', '$window', 'ngDialog', function ($attrs, $scope, $element, $interval, $http, $window, ngDialog) {
+	      $scope.$on('UnordereSentenceCtrlModelUpdated', function (event, data) {
+	        $scope.listOfWOrds = data;
+	        // randomWords();
+	        // console.log("data: " + $scope.listOfWOrds);
+	        init($attrs, $scope, $element, $interval, $http, $window, ngDialog);
+	      });
 	    }],
 	    template: '<ng-include src="getTemplateUrl()"></ng-include>',
 	    link: link

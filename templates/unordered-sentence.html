@@ -1,76 +1,29 @@
+<!--<div class="unordered-sentence-full-screen" ng-init="startTimer()">-->
 <div class="unordered-sentence-full-screen">
-	<!--Start Section-->
-	<div ng-show="!startVisible" class="start-screen">
-		<div class="game-title">
-			<div class="inner">
-				<div class="unordered-sentence-word">
-					Unordered
-				</div>
-				<div class="unordered-sentence-word">
-					Sentence
-				</div>
-			</div>
-
-		</div>
-		<div class="unordered-sentence-game-middle">
-			<unordered-sentence-button class="unordered-sentence-button unordered-sentence-button-lg"
-			        ng-click="startShowHide(); gameShowHide(); replayTimer()"> START
-			</unordered-sentence-button>
-			<br>
-			<unordered-sentence-button class="unordered-sentence-button unordered-sentence-button-lg"
-			        ng-click="startShowHide(); instructionShowHide()"> HOW TO
-			</unordered-sentence-button>
-			<br>
-			<unordered-sentence-button class="unordered-sentence-button unordered-sentence-button-lg"
-			        ng-click="startShowHide(); scoreShowHide()"> SCORE
-			</unordered-sentence-button>
-		</div>
-
-	</div>
-
-	<!--Instruction Section-->
-	<div class="unordered-sentence-instruction-section" ng-show="instructionVisible">
-		<div>
-			Move the words arround to complete the sentence
-		</div>
-		<div>
-			<unordered-sentence-button class="unordered-sentence-button"
-			        ng-click="startShowHide(); instructionShowHide()">
-				Exit
-			</unordered-sentence-button>
-		</div>
-	</div>
-
-	<!--Score Section-->
-	<div class="unordered-sentence-score-section" ng-show="scoreVisible">
-		<div>
-			Name Location Score Time
-		</div>
-		<unordered-sentence-button class="unordered-sentence-button" ng-click="startShowHide(); scoreShowHide()">
-			Exit
-		</unordered-sentence-button>
-	</div>
 
 	<!--Game Section-->
-	<div ng-show="gameVisible">
+	<div ng-show="!gameVisible">
 		<div class="unordered-sentence-buttonHolder">
 			<table width="100%" class="actions">
 				<tr>
-					<td colspan="2">
-						<span style="color:#d43f3a; font-size: 20px">Timer: {{countDown}} </span>
+					<td colspan="3">
+						<span style="color:#000000; font-size: 15px; border-style: solid;    border-width: 1px; padding: 5px;">Score: {{scoreMark}} </span>
 					</td>
-					<td colspan="2">
-						<span style="color:#d43f3a; font-size: 20px">Score: {{scoreMark}} </span>
+					<td colspan="3">
+						<span style="color:#1b3cc7; font-size: 50px; font-family: AlphaCloudsFont;font-style: italic; ">Falling clouds </span>
+					</td>
+					<td colspan="3">
+						<span style="color:#000000; font-size: 15px; border-style: solid;    border-width: 1px; padding: 5px">0:{{countDown}} </span>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div class="unordered-sentence-container">
 			<div class="game-body">
-				<div class="game-container" on-drag-end="onDropComplete()">
+				<div class="game-container" on-drag-end="onDropComplete()" id="cloud-background">
 					<ul ng-sortable="{animation:150}">
 						<li ng-repeat="obj in draggableObjects">
-							<div class="sortable-item-inner">
+							<div class="sortable-item-inner cloud" id="cloud">
                               {{ obj }}
 							</div>
 						</li>
@@ -82,18 +35,42 @@
 		<div class="unordered-sentence-buttonHolder">
 			<table width="100%" class="actions">
 				<tr>
-					<td colspan="2">
-						<unordered-sentence-button class="unordered-sentence-button" ng-click="startShowHide(); gameShowHide()">
-							Exit
-						</unordered-sentence-button>
+					<td colspan="1">
+						<button class="unordered-sentence-button" ng-click="startTimer()">
+							Start
+						</button>
 					</td>
-					<td colspan="2">
-						<span style="color:#d43f3a; font-size: 20px"> Falling Cloud </span>
-					</td>
+
 				</tr>
 			</table>
 		</div>
 
+		<!--TimeOver modal-->
+		<script type="text/ng-template" id="timeOverId">
+			<h2> {{ popupTitle }}</h2>
+			<p>The word is
+				<span style="color:indianred; font-size: 20px; font-weight: bold;">  {{ model.Statement  }} </span>
+			</p>
+			<div class="text-center">
+				<buton type="button" ng-click="replayTimer(); closeThisDialog('Click OK Button')"
+				       class="button button-sm">
+					OK
+				</buton>
+			</div>
+		</script>
+
+		<!--Submit modal-->
+		<script type="text/ng-template" id="submitId">
+			<div>
+				<h2> {{ submitMsg }}</h2>
+				<div class="text-center">
+					<button type="button" class="button button-sm"
+					        ng-click="isCorrect && replayTimer(); closeThisDialog('Click OK Button'); startTimer()">
+						OK
+					</button>
+				</div>
+			</div>
+		</script>
 	</div>
 
 
